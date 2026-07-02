@@ -59,6 +59,9 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*
+          files: |
+            dist/QuickDrawPride.bin
+            dist/QuickDrawPride.dsk
+            dist/QuickDrawPride-classic-mac.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
