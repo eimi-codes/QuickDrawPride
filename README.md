@@ -58,6 +58,21 @@ or disk-image tooling.
 3. Read the designer/source credit beneath the preview.
 4. Use `Command-Q` or Escape to quit.
 
+## Roadmap
+
+Planned improvements for future releases:
+
+- Add Distressed Egg's [Queer Villain Pride flag](https://distressedegg.fun/qvp), with
+  appropriate attribution for its CC BY-NC 4.0 license.
+- Replace the drawn scrollbar hint with a real classic Mac scroll bar control.
+- Improve list clipping and ellipsis behavior for long flag names.
+- Refine resize-aware spacing around the preview and credit line.
+- Polish the About box and menu behavior, including an `About QuickDrawPride` menu item.
+- Add a Help menu item that displays an on-screen QR code linking to this GitHub repository.
+- Add a button and/or keybind to show the selected flag full screen, returning to the normal
+  view when any key is pressed.
+- Add keyboard shortcuts for Page Up, Page Down, Home, and End navigation.
+
 ## Building Locally
 
 Configure with the Retro68 PowerPC toolchain:
