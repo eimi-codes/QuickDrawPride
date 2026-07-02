@@ -1,16 +1,19 @@
-cmake_minimum_required(VERSION 3.0)
-project(VGAPride)
+cmake_minimum_required(VERSION 3.10)
+project(QuickDrawPride)
 
 # List all the source files needed to compile the app
 set(SOURCES
-    vgapride.cpp
+    main.cpp
+    selector.cpp
+    qd_render.cpp
+    bitmaps.cpp
     flags.cpp
-    display.cpp
     graphics.cpp
     crabs.cpp
-    lz4.c 
+    flagdefs.cpp
+    flagbrzl.cpp
 )
 
-# Create a PowerPC Mac app with a Console
+# Create a native classic Mac app.
 # TYPE and CREATOR are classic Mac 4-character codes
-add_application(VGAPride CONSOLE TYPE "APPL" CREATOR "VGAP" ${SOURCES})
+add_application(QuickDrawPride TYPE "APPL" CREATOR "QDPR" ${SOURCES})

@@ -32,6 +32,20 @@
 *.out
 *.app
 
+# Retro68/CMake build output
+/build*/
+/dist/
+/QuickDrawPride.APPL
+/QuickDrawPride.ad
+/%QuickDrawPride.ad
+/QuickDrawPride.bin
+/QuickDrawPride.dsk
+/QuickDrawPride.pef
+/QuickDrawPride.xcoff
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
 # Borland temp files:
 *.SWP
 

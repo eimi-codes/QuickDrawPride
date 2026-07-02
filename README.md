@@ -1,69 +1,112 @@
 # QuickDrawPride
 
-A MacOS9 PPC application for showing Pride Flags. Ported from [@foone](https://github.com/foone)'s [VGAPride](https://github.com/foone/VGAPride) DOS program.
+[![Build](https://img.shields.io/github/actions/workflow/status/eimi-codes/QuickDrawPride/build.yml?branch=main&style=for-the-badge&logo=github&label=Build)](https://github.com/eimi-codes/QuickDrawPride/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/eimi-codes/QuickDrawPride?include_prereleases&style=for-the-badge&logo=classicpress&label=Release)](https://github.com/eimi-codes/QuickDrawPride/releases)
+[![Platform](https://img.shields.io/badge/Platform-Mac%20OS%208.6--9.2.2-111111?style=for-the-badge&logo=apple)](#requirements)
+[![CPU](https://img.shields.io/badge/CPU-PowerPC-0066cc?style=for-the-badge)](#requirements)
+[![Built with Retro68](https://img.shields.io/badge/Built%20with-Retro68-7b3fc6?style=for-the-badge)](https://github.com/autc04/Retro68)
+[![License](https://img.shields.io/github/license/eimi-codes/QuickDrawPride?style=for-the-badge)](LICENSE)
 
----
+A native classic Mac OS PowerPC app for browsing pride flags, ported from
+[@foone](https://github.com/foone)'s [VGAPride](https://github.com/foone/VGAPride).
 
-![WiP Badge](https://img.shields.io/badge/Status-Work_in_Progress-orange?style=for-the-badge)
-[![Made by Human](https://madebyhuman.iamjarl.com/badges/made-black.svg)](https://madebyhuman.iamjarl.com)
+QuickDrawPride keeps the spirit of the DOS original, but swaps the command line for a
+resizable Mac window with a scrolling flag selector, live preview, and per-flag credits.
 
----
+![QuickDrawPride showing the Cool Crab Trans Flag](docs/screenshots/cool-crab-trans.jpeg)
 
-VGAPride is an MS-DOS program by @foone that draws LGBTQ+ pride flags in VGA graphics. This project ports it to run natively on classic Mac OS (PowerPC), built with the **Retro68** GCC cross-toolchain, with **Metrowerks CodeWarrior** kept in reserve as a period-authentic fallback. The one significant change to the original's behaviour: instead of taking a flag name on the command line (or booting into a linear slideshow), the Mac version presents a **scrolling selector** so the user can jump straight to any flag out of ~60.
+## Screenshots
 
----
+| Cool Crab Trans | Polyamory | Progress Pride |
+| --- | --- | --- |
+| ![Cool Crab Trans flag in QuickDrawPride](docs/screenshots/cool-crab-trans.jpeg) | ![Polyamory flag in QuickDrawPride](docs/screenshots/polyamory.jpeg) | ![Progress Pride flag in QuickDrawPride](docs/screenshots/progress-pride.jpeg) |
 
 ## Requirements
 
-**To run:**
+To run:
 
-- A PowerPC Mac running Mac OS 8.6 – 9.2.2 (tested on G3/G4 hardware), **or**
-- [SheepShaver](https://sheepshaver.cebix.info/) with a Mac OS 9 install for testing.
-- A display set to Thousands or Millions of colours is recommended (256 colours works, but
-  flat fills may dither).
+- A PowerPC Mac running Mac OS 8.6-9.2.2, tested on G3/G4-class hardware.
+- SheepShaver with Mac OS 9 also works for emulator testing.
+- Thousands or Millions of colors is recommended. 256 colors works, but classic Mac palette
+  choices may dither or shift flat fills.
 
-**To build:**
+To build:
 
-- [Retro68](https://github.com/autc04/Retro68) (GCC cross-toolchain with the multiversal interfaces + CMake integration). *Primary toolchain.*
-- Optionally, **Metrowerks CodeWarrior Pro** (PowerPC target) if you'd rather build on the Mac itself — kept as a reserve path.
+- [Retro68](https://github.com/autc04/Retro68), using the PowerPC classic Mac toolchain.
+- CMake 3.10 or newer.
 
----
+## Download
+
+For a real Mac OS 9 transfer, use the MacBinary release asset:
+
+```text
+QuickDrawPride.bin
+```
+
+MacBinary preserves the application data fork, resource fork, and the `APPL`/`QDPR`
+type/creator metadata. The raw `.APPL` and `.pef` files are useful build products, but they
+can arrive on classic Mac OS as generic documents if moved through modern filesystems.
+
+The workflow also publishes `QuickDrawPride.dsk`, a raw HFS disk image useful for emulators
+or disk-image tooling.
 
 ## Usage
 
-1. Launch the app.
-2. Pick a flag from the list — click it, or use the **up/down arrows**, or start typing a
-   flag's name to jump to it.
-3. The flag draws in the preview pane, with its designer credit shown beneath.
-4. **⌘Q** or Escape to quit.
+1. Launch `QuickDrawPride`.
+2. Pick a flag from the list with the mouse, arrow keys, page keys, or by typing the start of
+   a flag name.
+3. Read the designer/source credit beneath the preview.
+4. Use `Command-Q` or Escape to quit.
 
-Full credits for every included flag are shown in the app (per-flag, and collected in the
-**About** box under the Apple menu).
+## Building Locally
 
----
+Configure with the Retro68 PowerPC toolchain:
 
-## How this differs from upstream VGAPride
+```sh
+/opt/homebrew/bin/cmake -S . -B build-ppc \
+  -DCMAKE_TOOLCHAIN_FILE=/Users/eimi/Development/Retro68-build/toolchain/powerpc-apple-macos/cmake/retroppc.toolchain.cmake
+```
 
-This is a source-level native port, not an emulator wrapper. The changes:
+Then actually build it:
 
-- **QuickDraw instead of BGI/VGA.** The ~12 BGI drawing calls are reimplemented on top of QuickDraw. Flag geometry is unchanged — it maps 1:1 onto QuickDraw's coordinate system.
-- **A selector instead of a command line.** Classic Mac OS has no shell to pass a flag name, so the picker (with live preview) replaces both the `VGAPRIDE <FLAGNAME>` interface and the DOS slideshow.
-- **True-colour rendering.** The original's 16-colour VGA palette-mapping layer is gone; QuickDraw draws in RGB directly.
-- **Bitmap flags regenerated from source.** The Cool Crab, Trans Cool Crab, and Autistic Pride flags were stored as LZ4-compressed planar VGA data unpacked by x86 assembly. This port regenerates them from the original PNGs (present upstream in `crabs/`) and draws them with `CopyBits`. The LZ4 assembly, bitplane manipulation, and direct-framebuffer code are removed.
+```sh
+/opt/homebrew/bin/cmake --build build-ppc
+```
 
----
+The useful transfer file will be:
+
+```text
+build-ppc/QuickDrawPride.bin
+```
+
+## CI and Releases
+
+The repository intentionally does not commit generated Retro68 build output. GitHub Actions
+builds in the official `ghcr.io/autc04/retro68` container, uploads the classic Mac artifacts
+for every build, and attaches them to GitHub Releases when a `v*` tag is pushed.
+
+## How This Differs From VGAPride
+
+- QuickDraw replaces the original BGI/VGA drawing layer.
+- The Mac app uses a selector window instead of command-line flag names or a DOS slideshow.
+- Vector flags render through Color QuickDraw using RGB colors.
+- Bitmap flags are regenerated from source PNGs and drawn through compatible QuickDraw
+  scanline fills, avoiding the DOS LZ4/x86 bitplane path.
+- The app emits MacBinary, AppleDouble, raw application, and HFS disk-image artifacts through
+  Retro68.
 
 ## License
 
-- The code is licensed under the terms of the GPL, version 3.
-- A copy of the license can be found in the LICENSE file.
-- It is a derivative work of VGAPRIDE, which is licensed under the terms of the GPL, version 3.
-- The Autistic Pride Flag was created by Autistic Empire, and is used under a Creative Commons Attribution-ShareAlike 4.0 International License: https://www.autisticempire.com/autistic-pride/
-- **Original DOS build also used**
-- **lz4_8088** by **Jim Leonard** (Trixter/Hornet), under the Demoscene License — <http://www.oldskool.org/pc/lz4_8088>. *Not used in this port* (the bitmap flags are regenerated from source images), credited here in acknowledgement.
-
----
+- Code is licensed under GPL-3.0. See [LICENSE](LICENSE).
+- This is a derivative work of VGAPride, also GPL-3.0.
+- The Autistic Pride Flag asset is by Autistic Empire under CC BY-SA 4.0.
+- The original DOS build used `lz4_8088` by Jim Leonard under the Demoscene License. It is
+  not used by this port, but remains credited in acknowledgement.
 
 ## Acknowledgements
 
-Thanks to @foone for VGAPride and for shipping the flag data in a form that made this port a joy rather than a slog, and to the Retro68 project ([autc04](https://github.com/autc04/Retro68)) for making modern classic-Mac cross-development possible.
+Thanks to [@foone](https://github.com/foone) for VGAPride and the lovingly strange flag data,
+and to [Retro68](https://github.com/autc04/Retro68) for making modern classic Mac
+cross-development viable.
+
+[![Made by Human](https://madebyhuman.iamjarl.com/badges/made-black.svg)](https://madebyhuman.iamjarl.com)

@@ -1,0 +1,64 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  retro68-ppc:
+    name: Retro68 PowerPC app
+    runs-on: ubuntu-latest
+    container: ghcr.io/autc04/retro68:latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: >
+          cmake -S . -B build-ppc
+          -DCMAKE_TOOLCHAIN_FILE=/Retro68-build/toolchain/powerpc-apple-macos/cmake/retroppc.toolchain.cmake
+
+      - name: Build
+        run: cmake --build build-ppc --verbose
+
+      - name: Package release assets
+        run: |
+          mkdir -p dist
+          cp build-ppc/QuickDrawPride.bin dist/
+          cp build-ppc/QuickDrawPride.dsk dist/
+          cp build-ppc/QuickDrawPride.APPL dist/
+          cp build-ppc/QuickDrawPride.ad dist/
+          cp build-ppc/%QuickDrawPride.ad dist/
+          cd dist
+          cmake -E tar cfv QuickDrawPride-classic-mac.zip --format=zip \
+            QuickDrawPride.bin \
+            QuickDrawPride.dsk \
+            QuickDrawPride.APPL \
+            QuickDrawPride.ad \
+            %QuickDrawPride.ad
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: QuickDrawPride-classic-mac
+          path: dist/*
+          if-no-files-found: error
+
+      - name: Publish tagged release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,9 +1,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include "graphics.h"
 #include "flags.h"
 #include "geometry.h"
+
+static int caseCompare(const char *a, const char *b){
+	while(*a && *b){
+		int ca=tolower((unsigned char)*a);
+		int cb=tolower((unsigned char)*b);
+		if(ca!=cb){
+			return ca-cb;
+		}
+		a++;
+		b++;
+	}
+	return (unsigned char)*a-(unsigned char)*b;
+}
 
 int countCommands(GraphicsCommand commands[]){
 	for(int i=0;i<MAX_COMMANDS;i++){
@@ -95,7 +109,7 @@ const char *Flag::listAliases(){
 
 // There is probably a smarter way to marge this with listAliases, but I am not smart today
 bool Flag::match(const char *name){
-	if(stricmp(name,this->shortname)==0){
+	if(caseCompare(name,this->shortname)==0){
 		return true;
 	}
 	if(aliases==NULL){
@@ -107,13 +121,13 @@ bool Flag::match(const char *name){
 	next=strchr(start, '|');
 	if(next==NULL){ 
 		// Only one alias, so check if it's that one
-		return stricmp(name,aliases)==0;
+		return caseCompare(name,aliases)==0;
 	}
 	while(next!=NULL){
 		// Temporarily copy just this alias to the buffer
 		memset(ALIASBUFFER, 0, ALIASBUFFER_SIZE);
 		strncpy(ALIASBUFFER,start,next-start);
-		if(stricmp(name,ALIASBUFFER)==0){
+		if(caseCompare(name,ALIASBUFFER)==0){
 			return true; 
 		}
 		start=next+1;
@@ -121,5 +135,5 @@ bool Flag::match(const char *name){
 	}
 	// Check the final alias in the string
 	strcpy(ALIASBUFFER,start);
-	return stricmp(name,ALIASBUFFER)==0;
+	return caseCompare(name,ALIASBUFFER)==0;
 }

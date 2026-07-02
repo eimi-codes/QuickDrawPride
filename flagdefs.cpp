@@ -442,7 +442,7 @@ static GraphicsCommand demisexual_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_5_2),Right(h_5_3),RGB(110,  0,112)),
 	GraphicsCommand(Rectangle,Left(h_5_3),Right(h_5_4),RGB(210,210,210)),
 	GraphicsCommand(Rectangle,Left(h_5_4),Right(h_5_5),RGB(210,210,210)),
-	GraphicsCommand(Triangle,Top(0),Point(243,h_2_1),Bottom(0),RGB(0,0,0)),
+	GraphicsCommand(Triangle,Top(0),PridePoint(243,h_2_1),Bottom(0),RGB(0,0,0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -462,7 +462,7 @@ static GraphicsCommand demiromantic_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_5_2),Right(h_5_3),RGB( 61,165, 66)),
 	GraphicsCommand(Rectangle,Left(h_5_3),Right(h_5_4),RGB(210,210,210)),
 	GraphicsCommand(Rectangle,Left(h_5_4),Right(h_5_5),RGB(210,210,210)),
-	GraphicsCommand(Triangle,Top(0),Point(243,h_2_1),Bottom(0),RGB(0,0,0)),
+	GraphicsCommand(Triangle,Top(0),PridePoint(243,h_2_1),Bottom(0),RGB(0,0,0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -484,19 +484,19 @@ static GraphicsCommand progressive_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_6_4),Right(h_6_5),RGB(0,77,255)),
 	GraphicsCommand(Rectangle,Left(h_6_5),Right(h_6_6),RGB(117,7,135)),
 	// Black chevron
-	GraphicsCommand(Quad,Point(51,0),Point(102,0),Point(304,240),Point(254,240),RGB(  0,  0,  0)),
-	GraphicsCommand(Quad,Point(254,240),Point(304,240),Point(102,480),Point(51,480),RGB(  0,  0,  0)),
+	GraphicsCommand(Quad,PridePoint(51,0),PridePoint(102,0),PridePoint(304,240),PridePoint(254,240),RGB(  0,  0,  0)),
+	GraphicsCommand(Quad,PridePoint(254,240),PridePoint(304,240),PridePoint(102,480),PridePoint(51,480),RGB(  0,  0,  0)),
 	// Brown chevron
-	GraphicsCommand(Quad,Point(0,0),Point(51,0),Point(254,240),Point(204,240),RGB( 97, 57, 21)),
-	GraphicsCommand(Quad,Point(204,240),Point(254,240),Point(51,480),Point(0,480),RGB( 97, 57, 21)),
+	GraphicsCommand(Quad,PridePoint(0,0),PridePoint(51,0),PridePoint(254,240),PridePoint(204,240),RGB( 97, 57, 21)),
+	GraphicsCommand(Quad,PridePoint(204,240),PridePoint(254,240),PridePoint(51,480),PridePoint(0,480),RGB( 97, 57, 21)),
 	// Light-blue chevron
-	GraphicsCommand(Quad,Point(0,60),Point(0,0),Point(204,240),Point(152,240),RGB(116,215,238)),
-	GraphicsCommand(Quad,Point(204,240),Point(152,240),Point(0,420),Point(0,480),RGB(116,215,238)),
+	GraphicsCommand(Quad,PridePoint(0,60),PridePoint(0,0),PridePoint(204,240),PridePoint(152,240),RGB(116,215,238)),
+	GraphicsCommand(Quad,PridePoint(204,240),PridePoint(152,240),PridePoint(0,420),PridePoint(0,480),RGB(116,215,238)),
 	// Pink chevron
-	GraphicsCommand(Quad,Point(0,122),Point(0,60),Point(152,240),Point(102,240),RGB(255,175,200)),
-	GraphicsCommand(Quad,Point(152,240),Point(102,240),Point(0,358),Point(0,418),RGB(255,175,200)),
+	GraphicsCommand(Quad,PridePoint(0,122),PridePoint(0,60),PridePoint(152,240),PridePoint(102,240),RGB(255,175,200)),
+	GraphicsCommand(Quad,PridePoint(152,240),PridePoint(102,240),PridePoint(0,358),PridePoint(0,418),RGB(255,175,200)),
 	// White triangle
-	GraphicsCommand(Triangle,Point(0,122),Point(102,240),Point(0,358),RGB(255,255,255)),
+	GraphicsCommand(Triangle,PridePoint(0,122),PridePoint(102,240),PridePoint(0,358),RGB(255,255,255)),
 
 	GraphicsCommand(EndCommandList)
 };
@@ -511,8 +511,8 @@ static Flag progressive_flag = Flag(
 
 static GraphicsCommand intersex_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Top(0),Bottom(640),RGB(255,216,  0)),
-	GraphicsCommand(Ellipse,Point(320,240),122,122,RGB(121, 2,170)),
-	GraphicsCommand(Ellipse,Point(320,240),87,87,RGB(255,216,  0)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),122,122,RGB(121, 2,170)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),87,87,RGB(255,216,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -538,7 +538,7 @@ static GraphicsCommand leather_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_9_7),Right(h_9_8),RGB( 42, 42,127)),
 	GraphicsCommand(Rectangle,Left(h_9_8),Right(h_9_9),RGB(  0,  0,  0)),
 
-	GraphicsCommand(Polygon,polygon_heart,RGB(231,  0, 57)),
+	GraphicsCommand(ShapePolygon,polygon_heart,RGB(231,  0, 57)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -566,12 +566,12 @@ static GraphicsCommand bear_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_7_5),Right(h_7_6),RGB( 85, 85, 85)),
 	GraphicsCommand(Rectangle,Left(h_7_6),Right(h_7_7),RGB( 0, 0, 0)),
 
-	GraphicsCommand(Polygon,polygon_bear0,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_bear1,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_bear2,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_bear3,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_bear4,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_bear5,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear0,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear1,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear2,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear3,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear4,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_bear5,RGB(  0,  0,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -587,9 +587,9 @@ static Flag bear_flag = Flag(
 int polygon_labrys[]={308,369,311,161,301,152,294,153,286,158,275,178,267,197,258,179,252,162,248,141,249,119,254,94,264,70,268,69,278,95,290,109,296,111,304,110,314,100,319,97,324,99,332,109,340,111,347,110,355,103,365,86,372,69,375,70,383,88,389,108,390,122,391,143,385,168,378,191,373,197,361,172,351,158,340,152,332,158,327,161,331,366,331,372,311,372,-1,-1};
 static GraphicsCommand labrys_lesbian_flag_commands[]={
 	GraphicsCommand(Rectangle,Top(0),Bottom(640),RGB(153, 51,153)),
-	GraphicsCommand(Triangle,Point(150,56),Point(489,56),Point(319,420),RGB(0,0,0)),
+	GraphicsCommand(Triangle,PridePoint(150,56),PridePoint(489,56),PridePoint(319,420),RGB(0,0,0)),
 
-	GraphicsCommand(Polygon,polygon_labrys,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_labrys,RGB(255,255,255)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -606,7 +606,7 @@ static GraphicsCommand polyamory_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_3_1),Right(h_3_2),RGB(255,  0,  0)),
 	GraphicsCommand(Rectangle,Left(h_3_2),Right(h_3_3),RGB(  0,  0,  0)),
 
-	GraphicsCommand(Polygon,polygon_polyamory,RGB(255,255,  0)),
+	GraphicsCommand(ShapePolygon,polygon_polyamory,RGB(255,255,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -627,7 +627,7 @@ static GraphicsCommand canada_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_6_4),Right(h_6_5),RGB(0,77,255)),
 	GraphicsCommand(Rectangle,Left(h_6_5),Right(h_6_6),RGB(117,7,135)),
 	GraphicsCommand(Rectangle,Top(v_4_1),Bottom(v_4_3),RGB(255,0,255)),
-	GraphicsCommand(Polygon,polygon_canada,RGB(228,  3,  3)),
+	GraphicsCommand(ShapePolygon,polygon_canada,RGB(228,  3,  3)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -654,12 +654,12 @@ static GraphicsCommand jewish_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_6_3),Right(h_6_4),RGB(0,128,38)),
 	GraphicsCommand(Rectangle,Left(h_6_4),Right(h_6_5),RGB(0,77,255)),
 	GraphicsCommand(Rectangle,Left(h_6_5),Right(h_6_6),RGB(117,7,135)),
-	GraphicsCommand(Polygon,polygon_star_of_david0,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_star_of_david1,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_star_of_david2,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_star_of_david3,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_star_of_david4,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_star_of_david5,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david0,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david1,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david2,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david3,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david4,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_star_of_david5,RGB(255,255,255)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -719,10 +719,10 @@ static GraphicsCommand lipstick_lesbian_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_7_4),Right(h_7_5),RGB(228,172,207)),
 	GraphicsCommand(Rectangle,Left(h_7_5),Right(h_7_6),RGB(197, 78, 84)),
 	GraphicsCommand(Rectangle,Left(h_7_6),Right(h_7_7),RGB(138, 30,  4)),
-	GraphicsCommand(Polygon,polygon_lipstick0,RGB(243,  9, 67)),
-	GraphicsCommand(Polygon,polygon_lipstick1,RGB(243,  9, 67)),
-	GraphicsCommand(PolygonOutline,polygon_lipstick0,RGB(  0,  0,  0)),
-	GraphicsCommand(PolygonOutline,polygon_lipstick1,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_lipstick0,RGB(243,  9, 67)),
+	GraphicsCommand(ShapePolygon,polygon_lipstick1,RGB(243,  9, 67)),
+	GraphicsCommand(ShapePolygonOutline,polygon_lipstick0,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygonOutline,polygon_lipstick1,RGB(  0,  0,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -746,9 +746,9 @@ static GraphicsCommand gay_flag_of_south_africa_commands[]={
 	GraphicsCommand(Rectangle,Left(h_6_4),Right(h_6_5),RGB(0,77,255)),
 	GraphicsCommand(Rectangle,Left(h_6_5),Right(h_6_6),RGB(117,7,135)),
 
-	GraphicsCommand(Polygon,polygon_south_africa0,RGB(  0,  0,  0)),
-	GraphicsCommand(Polygon,polygon_south_africa1,RGB(255,255,255)),
-	GraphicsCommand(Polygon,polygon_south_africa2,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_south_africa0,RGB(  0,  0,  0)),
+	GraphicsCommand(ShapePolygon,polygon_south_africa1,RGB(255,255,255)),
+	GraphicsCommand(ShapePolygon,polygon_south_africa2,RGB(255,255,255)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -772,22 +772,22 @@ static GraphicsCommand pink_union_jack_flag_commands[]={
 
 	// Red saltire of St. Patrick
 	// Top left
-	GraphicsCommand(Quad, Point(0,35), Point(0,0), Point(213,160), Point(165,160), RGB(224,  0, 52)),
+	GraphicsCommand(Quad, PridePoint(0,35), PridePoint(0,0), PridePoint(213,160), PridePoint(165,160), RGB(224,  0, 52)),
 	// Top right
-	GraphicsCommand(Quad, Point(379,160), Point(591,0), Point(640,0), Point(427,160), RGB(224,  0, 52)),
+	GraphicsCommand(Quad, PridePoint(379,160), PridePoint(591,0), PridePoint(640,0), PridePoint(427,160), RGB(224,  0, 52)),
 	// Bottom left
-	GraphicsCommand(Quad, Point(0,480), Point(212,320), Point(260,320), Point(48,480), RGB(224,  0, 52)),
+	GraphicsCommand(Quad, PridePoint(0,480), PridePoint(212,320), PridePoint(260,320), PridePoint(48,480), RGB(224,  0, 52)),
 	// Bottom right
-	GraphicsCommand(Quad, Point(427,320), Point(475,320), Point(640,444), Point(640,480), RGB(224,  0, 52)),
+	GraphicsCommand(Quad, PridePoint(427,320), PridePoint(475,320), PridePoint(640,444), PridePoint(640,480), RGB(224,  0, 52)),
 	// Pink triangles
-	GraphicsCommand(Triangle,Point(0,53),Point(142,160),Point(0,160),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(0,320),Point(142,320),Point(0,426),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(72,480),Point(267,333),Point(267,480),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(373,333),Point(568,480),Point(373,480),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(499,320),Point(640,320),Point(640,426),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(499,160),Point(640, 53),Point(640,160),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point(373,  0),Point(568,  0),Point(373,146),RGB(250,135,210)),
-	GraphicsCommand(Triangle,Point( 72,  0),Point(267,  0),Point(267,146),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(0,53),PridePoint(142,160),PridePoint(0,160),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(0,320),PridePoint(142,320),PridePoint(0,426),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(72,480),PridePoint(267,333),PridePoint(267,480),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(373,333),PridePoint(568,480),PridePoint(373,480),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(499,320),PridePoint(640,320),PridePoint(640,426),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(499,160),PridePoint(640, 53),PridePoint(640,160),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint(373,  0),PridePoint(568,  0),PridePoint(373,146),RGB(250,135,210)),
+	GraphicsCommand(Triangle,PridePoint( 72,  0),PridePoint(267,  0),PridePoint(267,146),RGB(250,135,210)),
 
 
 	GraphicsCommand(EndCommandList)
@@ -814,12 +814,12 @@ static GraphicsCommand rubber_pride_flag_commands[]={
 	// black background
 	GraphicsCommand(Rectangle,Top(0),Bottom(640),RGB(0,0,0)),
 	// Wide yellow stripe
-	GraphicsCommand(Polygon,polygon_rubber0,RGB(255,255,  0)),
+	GraphicsCommand(ShapePolygon,polygon_rubber0,RGB(255,255,  0)),
 	// Red stripes
-	GraphicsCommand(Polygon,polygon_rubber1,RGB(204,  0, 51)),
-	GraphicsCommand(Polygon,polygon_rubber2,RGB(204,  0, 51)),
-	GraphicsCommand(Polygon,polygon_rubber3,RGB(204,  0, 51)),
-	GraphicsCommand(Polygon,polygon_rubber4,RGB(204,  0, 51)),
+	GraphicsCommand(ShapePolygon,polygon_rubber1,RGB(204,  0, 51)),
+	GraphicsCommand(ShapePolygon,polygon_rubber2,RGB(204,  0, 51)),
+	GraphicsCommand(ShapePolygon,polygon_rubber3,RGB(204,  0, 51)),
+	GraphicsCommand(ShapePolygon,polygon_rubber4,RGB(204,  0, 51)),
 
 	GraphicsCommand(EndCommandList)
 };
@@ -1018,10 +1018,10 @@ static GraphicsCommand aegosexual_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_4_1),Right(h_4_2),RGB(163,163,163)),
 	GraphicsCommand(Rectangle,Left(h_4_2),Right(h_4_3),RGB(255,255,255)),
 	GraphicsCommand(Rectangle,Left(h_4_3),Right(h_4_4),RGB(128,  0,128)),
-	GraphicsCommand(Quad,Point(0,h_4_0),Point(640,h_4_0),Point(560,h_4_1),Point(80,h_4_1),RGB(128,  0,128)),
-	GraphicsCommand(Quad,Point(80,h_4_1),Point(560,h_4_1),Point(480,h_4_2),Point(160,h_4_2),RGB(255,255,255)),
-	GraphicsCommand(Quad,Point(159,h_4_2),Point(481,h_4_2),Point(400,h_4_3),Point(240,h_4_3),RGB(163,163,163)), // Cheating slightly to prevent white touching white
-	GraphicsCommand(Triangle,Point(240,h_4_3),Point(400,h_4_3),Point(320,h_4_4),RGB(  0,  0,  0)),
+	GraphicsCommand(Quad,PridePoint(0,h_4_0),PridePoint(640,h_4_0),PridePoint(560,h_4_1),PridePoint(80,h_4_1),RGB(128,  0,128)),
+	GraphicsCommand(Quad,PridePoint(80,h_4_1),PridePoint(560,h_4_1),PridePoint(480,h_4_2),PridePoint(160,h_4_2),RGB(255,255,255)),
+	GraphicsCommand(Quad,PridePoint(159,h_4_2),PridePoint(481,h_4_2),PridePoint(400,h_4_3),PridePoint(240,h_4_3),RGB(163,163,163)), // Cheating slightly to prevent white touching white
+	GraphicsCommand(Triangle,PridePoint(240,h_4_3),PridePoint(400,h_4_3),PridePoint(320,h_4_4),RGB(  0,  0,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -1036,14 +1036,14 @@ static Flag aegosexual_flag = Flag(
 
 
 static GraphicsCommand disability_pride_flag_commands[]={
-	GraphicsCommand(Triangle,Point(196,  0),Point(649,  0),Point(639,333),               RGB( 88, 88, 88)),
-	GraphicsCommand(Quad,    Point(116,  0),Point(195,  0),Point(639,334),Point(639,394),RGB( 58,175,125)),
-	GraphicsCommand(Quad,    Point( 33,  0),Point(115,  0),Point(639,395),Point(639,456),RGB(122,193,224)),
-	GraphicsCommand(Quad,    Point(  0, 38),Point(  0,  0),Point( 32,  0),Point(639,457),RGB(233,233,233)),
-	GraphicsCommand(Quad,    Point(  0, 38),Point(639,457),Point(639,479),Point(588,479),RGB(233,233,233)),
-	GraphicsCommand(Quad,    Point(  0, 99),Point(  0, 39),Point(587,479),Point(507,479),RGB(238,223,119)),
-	GraphicsCommand(Quad,    Point(  0,159),Point(  0, 98),Point(506,479),Point(430,479),RGB(207,114,128)),
-	GraphicsCommand(Triangle,Point(  0,160),Point(429,479),Point(  0,479),               RGB( 88, 88, 88)),
+	GraphicsCommand(Triangle,PridePoint(196,  0),PridePoint(649,  0),PridePoint(639,333),               RGB( 88, 88, 88)),
+	GraphicsCommand(Quad,    PridePoint(116,  0),PridePoint(195,  0),PridePoint(639,334),PridePoint(639,394),RGB( 58,175,125)),
+	GraphicsCommand(Quad,    PridePoint( 33,  0),PridePoint(115,  0),PridePoint(639,395),PridePoint(639,456),RGB(122,193,224)),
+	GraphicsCommand(Quad,    PridePoint(  0, 38),PridePoint(  0,  0),PridePoint( 32,  0),PridePoint(639,457),RGB(233,233,233)),
+	GraphicsCommand(Quad,    PridePoint(  0, 38),PridePoint(639,457),PridePoint(639,479),PridePoint(588,479),RGB(233,233,233)),
+	GraphicsCommand(Quad,    PridePoint(  0, 99),PridePoint(  0, 39),PridePoint(587,479),PridePoint(507,479),RGB(238,223,119)),
+	GraphicsCommand(Quad,    PridePoint(  0,159),PridePoint(  0, 98),PridePoint(506,479),PridePoint(430,479),RGB(207,114,128)),
+	GraphicsCommand(Triangle,PridePoint(  0,160),PridePoint(429,479),PridePoint(  0,479),               RGB( 88, 88, 88)),
 
 
 	GraphicsCommand(EndCommandList)
@@ -1068,26 +1068,26 @@ static GraphicsCommand progressive_intersex_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_6_4),Right(h_6_5),RGB(34,67,147)),
 	GraphicsCommand(Rectangle,Left(h_6_5),Right(h_6_6),RGB(89,17,109)),
 	// Black chevron
-	GraphicsCommand(Quad,Point(153,  0),Point(199,  0),Point(421,240),Point(374,240),RGB( 22, 22,  21)),
-	GraphicsCommand(Quad,Point(374,240),Point(421,240),Point(199,480),Point(152,480),RGB( 22, 22,  21)),
+	GraphicsCommand(Quad,PridePoint(153,  0),PridePoint(199,  0),PridePoint(421,240),PridePoint(374,240),RGB( 22, 22,  21)),
+	GraphicsCommand(Quad,PridePoint(374,240),PridePoint(421,240),PridePoint(199,480),PridePoint(152,480),RGB( 22, 22,  21)),
 	// Brown chevron
-	GraphicsCommand(Quad,Point(107,  0),Point(153,  0),Point(374,240),Point(328,240),RGB(129, 67, 18)),
-	GraphicsCommand(Quad,Point(328,240),Point(374,240),Point(153,480),Point(107,480),RGB(129, 67, 18)),
+	GraphicsCommand(Quad,PridePoint(107,  0),PridePoint(153,  0),PridePoint(374,240),PridePoint(328,240),RGB(129, 67, 18)),
+	GraphicsCommand(Quad,PridePoint(328,240),PridePoint(374,240),PridePoint(153,480),PridePoint(107,480),RGB(129, 67, 18)),
 	// Light-blue chevron
-	GraphicsCommand(Quad,Point( 60, 0),Point(107,  0),Point(328,240),Point(282,240),RGB(107,193,223)),
-	GraphicsCommand(Quad,Point(328,240),Point(282,240),Point(60,480),Point(107,480),RGB(107,193,223)),
+	GraphicsCommand(Quad,PridePoint( 60, 0),PridePoint(107,  0),PridePoint(328,240),PridePoint(282,240),RGB(107,193,223)),
+	GraphicsCommand(Quad,PridePoint(328,240),PridePoint(282,240),PridePoint(60,480),PridePoint(107,480),RGB(107,193,223)),
 	// Pink chevron
-	GraphicsCommand(Quad,Point( 15,0),Point(60,0),Point(282,240),Point(236,240),RGB(239,155,188)),
-	GraphicsCommand(Quad,Point(282,240),Point(236,240),Point(15,480),Point(60,480),RGB(239,155,188)),
+	GraphicsCommand(Quad,PridePoint( 15,0),PridePoint(60,0),PridePoint(282,240),PridePoint(236,240),RGB(239,155,188)),
+	GraphicsCommand(Quad,PridePoint(282,240),PridePoint(236,240),PridePoint(15,480),PridePoint(60,480),RGB(239,155,188)),
 	// White chevron
-	GraphicsCommand(Quad,Point(-31,0),Point(15,0),Point(236,240),Point(190,240),RGB(255,255,255)),
-	GraphicsCommand(Quad,Point(-31,480),Point(15,480),Point(236,240),Point(190,240),RGB(255,255,255)),
+	GraphicsCommand(Quad,PridePoint(-31,0),PridePoint(15,0),PridePoint(236,240),PridePoint(190,240),RGB(255,255,255)),
+	GraphicsCommand(Quad,PridePoint(-31,480),PridePoint(15,480),PridePoint(236,240),PridePoint(190,240),RGB(255,255,255)),
 	// Yellow triangle
-	GraphicsCommand(Triangle,Point(0,35),Point(190,240),Point(0,447),RGB(252,210,21)),
+	GraphicsCommand(Triangle,PridePoint(0,35),PridePoint(190,240),PridePoint(0,447),RGB(252,210,21)),
 	// Purple circle
-	GraphicsCommand(Ellipse,Point(70,240),57,57,RGB(82, 32,120)),
+	GraphicsCommand(Ellipse,PridePoint(70,240),57,57,RGB(82, 32,120)),
 	// Yellow circle inside purple circle
-	GraphicsCommand(Ellipse,Point(70,240),45,45,RGB(252,210,21)),
+	GraphicsCommand(Ellipse,PridePoint(70,240),45,45,RGB(252,210,21)),
 
 	GraphicsCommand(EndCommandList)
 };
@@ -1111,9 +1111,9 @@ static GraphicsCommand tricolor_polyamory_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(h_3_1),Right(h_3_2),RGB(228,  0, 80)),
 	GraphicsCommand(Rectangle,Left(h_3_2),Right(h_3_3),RGB( 52, 12, 70)),
 	// white chevron
-	GraphicsCommand(Quad,Point(0,0),Point(159,  0),Point(318,159),Point(0,479),RGB(255,255,255)),
+	GraphicsCommand(Quad,PridePoint(0,0),PridePoint(159,  0),PridePoint(318,159),PridePoint(0,479),RGB(255,255,255)),
 	// yellow heart
-	GraphicsCommand(Polygon,polygon_poly_heart,RGB(252,191,  0)),
+	GraphicsCommand(ShapePolygon,polygon_poly_heart,RGB(252,191,  0)),
 	GraphicsCommand(EndCommandList)
 };
 
@@ -1133,9 +1133,9 @@ static GraphicsCommand voidpunk_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Left(262),Right(379),RGB( 81,172, 86)),
 	GraphicsCommand(Rectangle,Left(379),Right(480),RGB( 32, 69, 44)),
 	// grey circle
-	GraphicsCommand(Ellipse,Point(320,240),103,103,RGB(233,233,233)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),103,103,RGB(233,233,233)),
 	// black circle inside grey circle
-	GraphicsCommand(Ellipse,Point(320,240),72,72,RGB( 27, 23, 30)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),72,72,RGB( 27, 23, 30)),
 
 	GraphicsCommand(EndCommandList)
 };
@@ -1177,9 +1177,9 @@ static GraphicsCommand objectum_pride_flag_commands[]={
 	GraphicsCommand(Rectangle,Top(v_5_3),Bottom(v_5_4),RGB(253,255,155)),
 	GraphicsCommand(Rectangle,Top(v_5_4),Bottom(v_5_5),RGB(180,153,194)),
 	// red circle
-	GraphicsCommand(Ellipse,Point(320,240),136,136,RGB(227,  0,  0)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),136,136,RGB(227,  0,  0)),
 	// white circle
-	GraphicsCommand(Ellipse,Point(320,240),122,122,RGB(253,255,255)),
+	GraphicsCommand(Ellipse,PridePoint(320,240),122,122,RGB(253,255,255)),
 	GraphicsCommand(EndCommandList)
 };
 

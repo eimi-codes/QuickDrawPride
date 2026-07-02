@@ -1,9 +1,13 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
-enum SHAPE_TYPE { 
-	Rectangle, Triangle, Quad, Ellipse, Polygon, PolygonOutline, 
-	ThickPolygonOutline, Lines, ThickLines, Star, VGAPlane, Palette, None, EndCommandList 
+#ifndef far
+#define far
+#endif
+
+enum SHAPE_TYPE {
+	Rectangle, Triangle, Quad, Ellipse, ShapePolygon, ShapePolygonOutline,
+	ThickShapePolygonOutline, Lines, ThickLines, Star, VGAPlane, ShapePalette, Bitmap, None, EndCommandList
 };
 enum STAR_SIZE {
 	BigStar, TinyStar, MediumStar
@@ -81,9 +85,9 @@ public:
 		this->points[0]=p1;
 		this->points[1]=Point2D(x,y);
 		this->color=color;
-		this->point_list=NULL;
+		this->point_list=0;
 	}
-	GraphicsCommand(SHAPE_TYPE shape,int far *pointlist, RGBCOLOR color);
+	GraphicsCommand(SHAPE_TYPE shape,const int far *pointlist, RGBCOLOR color);
 	
 	GraphicsCommand(SHAPE_TYPE shape,Point2D p1, int size, RGBCOLOR color){
 		this->shape=shape;
@@ -114,7 +118,7 @@ int operator==(const RGBCOLOR &a, const RGBCOLOR &b);
 
 RGBCOLOR RGB(int r, int g, int b);
 
-Point2D Point(int x, int y);
+Point2D PridePoint(int x, int y);
 
 
 Point2D Left(int y);

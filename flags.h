@@ -1,5 +1,7 @@
+#ifndef FLAGS_H
+#define FLAGS_H
+
 #include "graphics.h"
-#include "bool.h"
 
 enum TextLayout {LAYOUT_CENTER, LAYOUT_RIGHT, LAYOUT_LEFT};
 
@@ -54,3 +56,4 @@ private:
 
 extern class Flag far *PRIDE_FLAGS[];
 
+#endif

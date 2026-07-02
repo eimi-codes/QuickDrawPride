@@ -5,8 +5,8 @@ int operator==(const RGBCOLOR &a, const RGBCOLOR &b){
 		return a.r==b.r && a.g==b.g && a.b==b.b;
 }
 
-GraphicsCommand::GraphicsCommand(SHAPE_TYPE shape,int far *pointlist, RGBCOLOR color){
-	this->point_list=pointlist;
+GraphicsCommand::GraphicsCommand(SHAPE_TYPE shape,const int far *pointlist, RGBCOLOR color){
+	this->point_list=(int *)pointlist;
 	this->shape=shape;
 	this->color=color;
 	for(int i=0;;i+=2){
@@ -22,21 +22,21 @@ RGBCOLOR RGB(int r, int g, int b){
 	return RGBCOLOR(r,g,b);
 }
 
-Point2D Point(int x, int y){
+Point2D PridePoint(int x, int y){
 	Point2D p=Point2D(x,y);
 	return p;
 }
 
 Point2D Left(int y){
-	return Point(0,y);
+	return PridePoint(0,y);
 }
 Point2D Right(int y){
-	return Point(640,y);
+	return PridePoint(640,y);
 }
 
 Point2D Top(int x){
-	return Point(x,0);
+	return PridePoint(x,0);
 }
 Point2D Bottom(int x){
-	return Point(x,480);
+	return PridePoint(x,480);
 }
