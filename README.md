@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/github/license/eimi-codes/QuickDrawPride?style=for-the-badge)](LICENSE)
 
 A native classic Mac OS PowerPC app for browsing pride flags, ported from
-[@foone](https://github.com/foone)'s [VGAPride](https://github.com/foone/VGAPride).
+[Alice Averlong](https://averlong.com/)'s [VGAPride](https://github.com/foone/VGAPride).
 
 QuickDrawPride keeps the spirit of the DOS original, but swaps the command line for a
 resizable Mac window with a scrolling flag selector, live preview, and per-flag credits.
@@ -120,8 +120,13 @@ for every build, and attaches them to GitHub Releases when a `v*` tag is pushed.
 
 ## Acknowledgements
 
-Thanks to [@foone](https://github.com/foone) for VGAPride and the lovingly strange flag data,
+Thanks to [Alice Averlong](https://averlong.com/) for
+[foone/VGAPride](https://github.com/foone/VGAPride) and the lovingly strange flag data,
 and to [Retro68](https://github.com/autc04/Retro68) for making modern classic Mac
 cross-development viable.
+
+Alice's links: [Website](https://averlong.com/), [GitHub](https://github.com/foone),
+[Mastodon](https://digipres.club/@foone), and
+[Bluesky](https://bsky.app/profile/alice.averlong.com).
 
 [![Made by Human](https://madebyhuman.iamjarl.com/badges/made-black.svg)](https://madebyhuman.iamjarl.com)

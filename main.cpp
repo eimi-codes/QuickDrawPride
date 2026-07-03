@@ -52,7 +52,7 @@ static void DrawAboutText(WindowPtr window){
 	MoveTo(18, 28);
 	DrawString("\pQuickDrawPride");
 	MoveTo(18, 50);
-	DrawString("\pA classic Mac OS port of Foone Turing's VGAPride.");
+	DrawString("\pA classic Mac OS port of Alice Averlong's VGAPride.");
 	MoveTo(18, 72);
 	DrawString("\pVector flags render natively through QuickDraw.");
 	MoveTo(18, 94);

@@ -1206,7 +1206,7 @@ static GraphicsCommand ps_slash_2_pride_flag_commands[]={
 static Flag ps_slash_2_pride_flag = Flag(
 	"ps/2",
 	"The PS/2 Pride Flag",
-	"Designed by Foone Turing in 2021",
+	"Designed by Alice Averlong in 2021",
 	"ps2|ps-slash-2|ibm",
 	ps_slash_2_pride_flag_commands
 );

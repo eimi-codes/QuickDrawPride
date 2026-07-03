@@ -90,7 +90,7 @@ with open(os.path.join('..','crabs.cpp'),'w') as outcrabs:
 Flag crab_pride_flag = Flag(
 	"crab-pride",
 	"The Cool Crab Pride Flag",
-	"Created by Foone Turing in 2022, based on the Cool Crab from Print Shop Deluxe",
+	"Created by Alice Averlong in 2022, based on the Cool Crab from Print Shop Deluxe",
 	"crab|crabs|gay-crabs",
 	crab_pride_flag_commands
 );
@@ -98,7 +98,7 @@ Flag crab_pride_flag = Flag(
 Flag trans_crab_flag = Flag(
 	"trans-crab",
 	"The Cool Crab Trans Flag",
-	"Created by Foone Turing in 2022, based on the Cool Crab from Print Shop Deluxe",
+	"Created by Alice Averlong in 2022, based on the Cool Crab from Print Shop Deluxe",
 	"transcrab",
 	trans_crab_flag_commands
 );

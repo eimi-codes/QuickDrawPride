@@ -169,7 +169,7 @@ void quickFlags(){
 }
 
 void displayUsage(){
-	printf("VGAPride %s by Foone Turing (@foone@digipres.club), 2022-2023. Other credits:\n", VERSION);
+	printf("VGAPride %s by Alice Averlong, 2022-2023. Other credits:\n", VERSION);
 	printf(" * lz4_8088 decompression code: Jim Leonard\n");
 	printf(" * Aegosexual Flag: Keiya (@keiyakins)\n");
 	printf(" * Many flags: Rebecca G. Bettencourt (@RebeccaRGB)\n");
