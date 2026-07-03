@@ -13,6 +13,8 @@ A native classic Mac OS PowerPC app for browsing pride flags, ported from
 QuickDrawPride keeps the spirit of the DOS original, but swaps the command line for a
 resizable Mac window with a scrolling flag selector, live preview, and per-flag credits.
 
+## [Download the latest version](https://github.com/eimi-codes/QuickDrawPride/releases/latest) | [How it was made (blog post)](https://eim.ie/posts/2026/vga-to-quickdraw.htm) | [Macintosh Garden](https://macintoshgarden.org/apps/quickdrawpride)
+
 ![QuickDrawPride showing the Cool Crab Trans Flag](docs/screenshots/cool-crab-trans.jpeg)
 
 ## Screenshots
